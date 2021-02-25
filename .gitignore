@@ -1,0 +1,9 @@
+# Ignore compiler output
+/target
+
+# Ignore IDE files
+
+# Intelij
+
+.idea/
+*.iml
