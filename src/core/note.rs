@@ -20,18 +20,23 @@ pub struct Note {
     content: String
 }
 
+impl Note {
+    pub fn new(title: Option<String>, content: String) -> Self {
+        Self {
+            title,
+            content
+        }
+    }
+}
+
 #[cfg(test)]
 mod test_notes {
     use super::*;
 
-    const TITLE: Option<String> = Some("Title".to_string());
-    const CONTENT: String = "Hello, World!".to_string();
-    const NOTE: Note = Note {title: TITLE, content: CONTENT};
-
     #[test]
     fn should_have_new_method() {
-        let note = Note::new(TITLE, CONTENT);
-        assert_eq!(note.title, NOTE);
-        assert_eq!(note.content, CONTENT);
+        let note = Note::new(None, "Hello, world!".to_string());
+        assert_eq!(note.title, None);
+        assert_eq!(note.content, "Hello, world!".to_string());
     }
 }
