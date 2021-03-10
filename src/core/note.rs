@@ -32,11 +32,13 @@ impl Note {
 #[cfg(test)]
 mod test_notes {
     use super::*;
+    use test_case::test_case;
 
-    #[test]
-    fn should_have_new_method() {
-        let note = Note::new(None, "Hello, world!".to_string());
-        assert_eq!(note.title, None);
-        assert_eq!(note.content, "Hello, world!".to_string());
+    #[test_case(None, "Hello, World!".to_string(); "should take none title")]
+    #[test_case(Some("Title".to_string()), "Hello, World!".to_string(); "should take some title")]
+    fn should_have_new_method(title: Option<String>, content: String) {
+        let note = Note::new(title.clone(), content.clone());
+        assert_eq!(note.title, title);
+        assert_eq!(note.content, content);
     }
 }
