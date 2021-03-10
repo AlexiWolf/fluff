@@ -15,7 +15,10 @@
  * along with Fluff.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-pub struct Note {}
+pub struct Note {
+    title: Option<String>,
+    content: String
+}
 
 #[cfg(test)]
 mod test_notes {
@@ -29,5 +32,6 @@ mod test_notes {
     fn should_have_new_method() {
         let note = Note::new(TITLE, CONTENT);
         assert_eq!(note.title, NOTE);
+        assert_eq!(note.content, CONTENT);
     }
 }
