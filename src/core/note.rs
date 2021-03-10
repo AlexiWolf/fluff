@@ -30,7 +30,7 @@ impl Note {
 }
 
 #[cfg(test)]
-mod test_notes {
+mod test_note {
     use super::*;
     use test_case::test_case;
 
