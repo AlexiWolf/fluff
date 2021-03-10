@@ -15,8 +15,6 @@
  * along with Fluff.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-mod core;
+mod note;
 
-fn main() {
-    println!("Hello, world!");
-}
+pub use crate::core::note::Note;
